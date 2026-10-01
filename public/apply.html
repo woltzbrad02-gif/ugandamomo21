@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zimbabwe Pride - Smartphones on Credit</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #e8ede8 0%, #f5f2e8 50%, #e8e8f0 100%);
+            background-attachment: fixed;
+            color: #111;
+        }
+        
+        .poster {
+            width: 100%;
+            max-width: 930px;
+            margin: 15px auto;
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, .25);
+            border-radius: 18px;
+        }
+        /* =========================
+           HEADER
+        ========================= */
+        
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px 5px;
+            gap: 25px;
+            background: linear-gradient(135deg, #f7fdf7 0%, #fdf5f5 100%);
+            border-bottom: 4px solid;
+            border-image: linear-gradient(90deg, #08751e, #f0c400, #d00000) 1;
+            border-radius: 18px 18px 0 0;
+        }
+        
+        .flag {
+            width: 48%;
+            max-width: 470px;
+        }
+        
+        .flag svg {
+            width: 100%;
+            display: block;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, .25));
+            border-radius: 10px;
+        }
+        
+        .header-title {
+            flex: 1;
+            text-align: center;
+            font-weight: 900;
+            font-style: italic;
+            line-height: 1;
+        }
+        
+        .header-title .green {
+            color: #08751e;
+            font-size: clamp(25px, 4vw, 48px);
+        }
+        
+        .header-title .red {
+            color: #d00000;
+            font-size: clamp(30px, 5vw, 55px);
+            margin-top: 5px;
+        }
+        /* Decorative stripes — animated shimmer */
+        
+        .stripes {
+            height: 35px;
+            margin: 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stripes::before {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 6px;
+            background: #08751e;
+            right: 0;
+            top: 5px;
+            transform: skewX(-30deg);
+            animation: stripeSlide 3s ease-in-out infinite alternate;
+        }
+        
+        .stripes::after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 5px;
+            background: #d00000;
+            right: 0;
+            top: 17px;
+            transform: skewX(-30deg);
+            animation: stripeSlide 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes stripeSlide {
+            from {
+                transform: skewX(-30deg) translateX(0);
+            }
+            to {
+                transform: skewX(-30deg) translateX(-40px);
+            }
+        }
+        /* =========================
+           MAIN HEADING
+        ========================= */
+        
+        .offer {
+            text-align: center;
+            padding: 5px 20px 0;
+        }
+        
+        .offer-small {
+            font-size: 25px;
+            font-weight: 900;
+            font-style: italic;
+        }
+        
+        .offer-small::before,
+        .offer-small::after {
+            content: "━";
+            margin: 0 15px;
+            color: #d6a800;
+        }
+        
+        .main-title {
+            margin-top: 3px;
+            color: #d00000;
+            font-size: clamp(45px, 8vw, 82px);
+            font-weight: 1000;
+            font-style: italic;
+            letter-spacing: -3px;
+            text-shadow: 2px 2px 0 #222, 4px 4px 0 #fff, 0 0 25px rgba(208, 0, 0, .35);
+        }
+        
+        .loan-title {
+            display: inline-block;
+            background: #08751e;
+            color: white;
+            padding: 5px 40px;
+            font-size: clamp(35px, 6vw, 65px);
+            font-weight: 1000;
+            font-style: italic;
+            transform: skewX(-8deg);
+            box-shadow: 0 8px 25px rgba(8, 117, 30, .45);
+            letter-spacing: 1px;
+        }
+        
+        .slogan {
+            margin-top: 7px;
+            font-size: clamp(17px, 3vw, 25px);
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .slogan::before,
+        .slogan::after {
+            content: "★";
+            color: #d00000;
+            margin: 0 10px;
+        }
+        /* =========================
+           LOAN OPTIONS
+        ========================= */
+        
+        .loan-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 10px 30px 5px;
+        }
+        
+        .loan-card {
+            border: 3px solid #08751e;
+            border-radius: 14px;
+            overflow: hidden;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        
+        .loan-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+        }
+        
+        .loan-card.red {
+            border-color: #c40000;
+        }
+        
+        .loan-card.blue {
+            border-color: #174ca4;
+        }
+        
+        .loan-card.orange {
+            border-color: #e07000;
+        }
+        
+        .card-heading {
+            color: white;
+            padding: 8px;
+            font-size: clamp(25px, 4vw, 42px);
+            font-weight: 900;
+            font-style: italic;
+            border-radius: 10px;
+            margin: -1px -1px 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, .4);
+            letter-spacing: 1px;
+        }
+        
+        .green-heading {
+            background: #08751e;
+        }
+        
+        .red-heading {
+            background: #c40000;
+        }
+        
+        .blue-heading {
+            background: #174ca4;
+        }
+        
+        .orange-heading {
+            background: #e07000;
+        }
+        
+        .deposit-label,
+        .installment-label {
+            font-weight: 900;
+            font-size: 18px;
+        }
+        
+        .deposit {
+            font-size: clamp(34px, 5vw, 50px);
+            font-weight: 1000;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+        }
+        
+        .green-text {
+            color: #08751e;
+        }
+        
+        .red-text {
+            color: #c40000;
+        }
+        
+        .blue-text {
+            color: #174ca4;
+        }
+        
+        .orange-text {
+            color: #e07000;
+        }
+        
+        .percent {
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            background: #d00000;
+            color: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            vertical-align: middle;
+            margin-left: 5px;
+            box-shadow: 0 4px 10px rgba(208, 0, 0, .4);
+            transition: transform .3s ease;
+        }
+        
+        .loan-card:hover .percent {
+            transform: rotate(360deg) scale(1.1);
+        }
+        
+        .divider {
+            border-top: 2px dashed #aaa;
+            margin: 10px 15px;
+        }
+        
+        .monthly {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 1000;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+        }
+        
+        .period {
+            color: white;
+            margin: 5px 15px 12px;
+            padding: 5px;
+            font-size: 18px;
+            font-weight: 900;
+        }
+        
+        .green-period {
+            background: #08751e;
+        }
+        
+        .red-period {
+            background: #c40000;
+        }
+        
+        .blue-period {
+            background: #174ca4;
+        }
+        
+        .orange-period {
+            background: #e07000;
+        }
+        /* =========================
+           SECTION TITLE BAR
+        ========================= */
+        
+        .section-title {
+            margin: 8px 30px;
+            background: #111;
+            color: white;
+            text-align: center;
+            font-size: clamp(23px, 4vw, 40px);
+            font-weight: 1000;
+            font-style: italic;
+            padding: 7px;
+            position: relative;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
+            letter-spacing: 2px;
+            overflow: hidden;
+        }
+        
+        .section-title::before,
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 65px;
+            background: linear-gradient(60deg, #111 25%, #d00000 26%, #d00000 45%, #f0c400 46%, #f0c400 65%, #08751e 66%, #08751e 80%, #111 81%);
+            filter: brightness(1.2);
+        }
+        
+        .section-title::before {
+            left: 0;
+        }
+        
+        .section-title::after {
+            right: 0;
+        }
+        /* =========================
+           INSTALLMENT ROWS
+        ========================= */
+        
+        .installments {
+            padding: 0 30px;
+        }
+        
+        .installment-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1.2fr 1fr;
+            align-items: center;
+            border: 2px solid #08751e;
+            border-radius: 13px;
+            margin-bottom: 7px;
+            min-height: 48px;
+            overflow: hidden;
+            font-weight: 900;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .07);
+            background: linear-gradient(90deg, #fff 0%, #fafcf9 100%);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        
+        .installment-row:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+        }
+        
+        .installment-row.red-row {
+            border-color: #c40000;
+        }
+        
+        .installment-row.blue-row {
+            border-color: #174ca4;
+        }
+        
+        .installment-row.orange-row {
+            border-color: #e07000;
+        }
+        
+        .phone-mini {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-left: 12px;
+        }
+        
+        .mini-circle {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            background: rgba(255, 255, 255, .6);
+            transition: transform .3s ease, background .3s ease;
+        }
+        
+        .installment-row:hover .mini-circle {
+            transform: scale(1.2) rotate(10deg);
+            background: rgba(240, 196, 0, .3);
+        }
+        
+        .row-value {
+            text-align: center;
+        }
+        
+        .row-label {
+            display: block;
+            font-size: 12px;
+        }
+        
+        .row-money {
+            font-size: 23px;
+        }
+        
+        .row-period {
+            background: #08751e;
+            color: white;
+            text-align: center;
+            padding: 10px 5px;
+            font-size: 18px;
+        }
+        
+        .red-row .row-period {
+            background: #c40000;
+        }
+        
+        .blue-row .row-period {
+            background: #174ca4;
+        }
+        
+        .orange-row .row-period {
+            background: #e07000;
+        }
+        
+        .row-month {
+            font-size: 25px;
+            text-align: center;
+        }
+        /* =========================
+           PHONES — 4-IMAGE AUTO-SLIDERS
+        ========================= */
+        
+        .phones {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 5px 30px;
+        }
+        
+        .phone-card {
+            border: 2px solid #08751e;
+            border-radius: 12px;
+            text-align: center;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+            transition: transform .35s cubic-bezier(.2, .8, .3, 1.2), box-shadow .35s ease;
+            position: relative;
+        }
+        
+        .phone-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(8, 117, 30, .35);
+        }
+        
+        .phone-card.red-phone {
+            border-color: #c40000;
+        }
+        
+        .phone-card.red-phone:hover {
+            box-shadow: 0 18px 40px rgba(196, 0, 0, .35);
+        }
+        
+        .phone-card.blue-phone {
+            border-color: #174ca4;
+        }
+        
+        .phone-card.blue-phone:hover {
+            box-shadow: 0 18px 40px rgba(23, 76, 164, .35);
+        }
+        
+        .phone-card.green-phone {
+            border-color: #08751e;
+        }
+        /* ---- The slider ---- */
+        
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background: #fff;
+        }
+        
+        .slider-track {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            animation: slideLeft 14s linear infinite;
+            animation-play-state: paused;
+            will-change: transform;
+        }
+        
+        .phone-card:hover .slider-track,
+        .phone-card.touched .slider-track {
+            animation-play-state: running;
+        }
+        
+        @keyframes slideLeft {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-400%);
+            }
+        }
+        
+        .slider-track img {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            object-fit: contain;
+            display: block;
+            padding: 5px;
+            background: #fff;
+        }
+        
+        .brand-label {
+            display: inline-block;
+            color: white;
+            padding: 5px 30px;
+            margin: 0 0 8px;
+            border-radius: 4px;
+            font-size: 22px;
+            font-weight: 1000;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+            letter-spacing: .5px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, .35);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        
+        .phone-card:hover .brand-label {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, .35);
+        }
+        
+        .green-brand {
+            background: #08751e;
+        }
+        
+        .red-brand {
+            background: #c40000;
+        }
+        
+        .blue-brand {
+            background: #174ca4;
+        }
+        
+        .orange-brand {
+            background: #e07000;
+        }
+        
+        .phone-models .phone-card {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .phone-models .brand-label {
+            margin: 0 6px 7px;
+            font-size: 16px;
+            padding: 6px 8px;
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .phone-display {
+            min-height: 70px;
+            padding: 8px 10px 12px;
+            font-size: 13px;
+            line-height: 1.35;
+            font-weight: 700;
+            color: #333;
+        }
+        /* =========================
+           NEW — PRICE TAG + STOCK TAG
+        ========================= */
+        
+        .stock-tag {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 5;
+            background: #08751e;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, .35);
+        }
+        
+        .months-tag {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 5;
+            background: #f0c400;
+            color: #111;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, .35);
+        }
+        
+        .price-tag {
+            margin: 0 8px 8px;
+            border: 2px dashed #08751e;
+            border-radius: 10px;
+            padding: 6px 4px;
+            background: #fbfff8;
+        }
+        
+        .price-tag .pt-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #444;
+            padding: 2px 6px;
+        }
+        
+        .price-tag .pt-row strong {
+            font-size: 16px;
+            font-weight: 1000;
+        }
+        
+        .price-tag .green-strong {
+            color: #08751e;
+        }
+        
+        .price-tag .red-strong {
+            color: #c40000;
+        }
+        
+        .price-tag .blue-strong {
+            color: #174ca4;
+        }
+        
+        .price-tag .orange-strong {
+            color: #e07000;
+        }
+        
+        .red-phone .price-tag {
+            border-color: #c40000;
+            background: #fff8f8;
+        }
+        
+        .blue-phone .price-tag {
+            border-color: #174ca4;
+            background: #f6f9ff;
+        }
+        
+        .price-total {
+            font-size: 11px;
+            font-weight: 900;
+            color: #666;
+            text-align: center;
+            padding-top: 3px;
+            border-top: 1px dashed #bbb;
+            margin-top: 3px;
+        }
+        /* =========================
+           NEW — STOCK & CONTACT NUMBERS STRIP
+        ========================= */
+        
+        .stock-strip {
+            margin: 5px 30px;
+            background: linear-gradient(135deg, #08751e 0%, #0a9a26 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 12px 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(8, 117, 30, .35);
+        }
+        
+        .stock-strip h3 {
+            font-size: clamp(16px, 3vw, 22px);
+            font-weight: 1000;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        
+        .stock-strip p {
+            font-size: clamp(14px, 2.5vw, 18px);
+            font-weight: 700;
+            line-height: 1.6;
+        }
+        
+        .stock-strip a {
+            color: #ffe14d;
+            text-decoration: none;
+            font-weight: 1000;
+        }
+        
+        .stock-strip a:hover {
+            text-decoration: underline;
+        }
+        /* =========================
+           FEATURED IMAGE
+        ========================= */
+        
+        .featured-section {
+            padding: 5px 30px 10px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .featured-frame {
+            width: 100%;
+            max-width: 860px;
+            border: 3px solid #08751e;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #fff;
+            animation: breathe 4s ease-in-out infinite;
+            transition: transform .4s ease;
+        }
+        
+        @keyframes breathe {
+            0%,
+            100% {
+                box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
+            }
+            50% {
+                box-shadow: 0 5px 30px rgba(8, 117, 30, .45);
+            }
+        }
+        
+        .featured-frame:hover {
+            transform: scale(1.015);
+        }
+        
+        .featured-frame img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        /* =========================
+           FEATURES
+        ========================= */
+        
+        .features {
+            margin: 5px 30px;
+            background: linear-gradient(135deg, #111 0%, #222 100%);
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .3);
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 10px 5px;
+            border-right: 1px solid #777;
+            transition: background .3s ease;
+        }
+        
+        .feature:hover {
+            background: rgba(255, 255, 255, .07);
+        }
+        
+        .feature:last-child {
+            border-right: none;
+        }
+        
+        .feature-icon {
+            width: 45px;
+            height: 45px;
+            margin: auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+            transition: transform .3s ease;
+        }
+        
+        .feature:hover .feature-icon {
+            transform: scale(1.25) rotate(-8deg);
+        }
+        
+        .feature:nth-child(1) .feature-icon {
+            background: #08751e;
+        }
+        
+        .feature:nth-child(2) .feature-icon {
+            background: #d00000;
+        }
+        
+        .feature:nth-child(3) .feature-icon {
+            background: #f0c400;
+        }
+        
+        .feature:nth-child(4) .feature-icon {
+            background: #08751e;
+        }
+        
+        .feature h3 {
+            font-size: 16px;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+        
+        .feature p {
+            font-size: 12px;
+        }
+        /* =========================
+           BOTTOM CTA — shine sweep
+        ========================= */
+        
+        .cta {
+            position: relative;
+            background: #f2c500;
+            margin: 5px 30px 15px;
+            text-align: center;
+            padding: 8px 20px;
+            clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0 50%);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(242, 197, 0, .4);
+            transition: transform .3s ease;
+        }
+        
+        .cta:hover {
+            transform: scale(1.02);
+        }
+        
+        .cta::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -80%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, .55) 50%, transparent 100%);
+            transform: rotate(15deg);
+            animation: shine 3.5s ease-in-out infinite;
+        }
+        
+        @keyframes shine {
+            0% {
+                left: -80%;
+            }
+            60%,
+            100% {
+                left: 130%;
+            }
+        }
+        
+        .cta-main {
+            font-size: clamp(24px, 5vw, 42px);
+            font-weight: 1000;
+            font-style: italic;
+        }
+        
+        .cta-main span {
+            color: #c40000;
+        }
+        
+        .approved {
+            display: inline-block;
+            background: #c40000;
+            color: white;
+            padding: 5px 18px;
+            transform: rotate(-5deg);
+            font-size: 20px;
+            font-weight: 1000;
+            margin-left: 10px;
+        }
+        /* =========================
+           BUTTON — floating pulse
+        ========================= */
+        
+        .apply-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            border: none;
+            background: linear-gradient(135deg, #0a9a26 0%, #08751e 60%, #065c16 100%);
+            color: white;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 900;
+            cursor: pointer;
+            letter-spacing: 1.5px;
+            z-index: 100;
+            transition: transform .25s ease, box-shadow .25s ease;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                box-shadow: 0 5px 20px rgba(0, 0, 0, .3), 0 0 0 0 rgba(8, 117, 30, .5);
+            }
+            50% {
+                box-shadow: 0 5px 25px rgba(0, 0, 0, .35), 0 0 0 12px rgba(8, 117, 30, 0);
+            }
+        }
+        
+        .apply-btn:hover {
+            transform: scale(1.1);
+            animation-play-state: paused;
+            box-shadow: 0 10px 35px rgba(8, 117, 30, .5);
+        }
+        /* =========================
+           SCROLL-REVEAL ENTRANCE
+        ========================= */
+        
+        .loan-card,
+        .installment-row,
+        .phone-card,
+        .feature {
+            animation: fadeUp .7s ease both;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                gap: 5px;
+                padding: 10px;
+            }
+            .flag {
+                width: 90%;
+            }
+            .header-title {
+                width: 100%;
+            }
+            .loan-options {
+                grid-template-columns: 1fr;
+                padding: 10px 15px;
+                gap: 12px;
+            }
+            .loan-card {
+                max-width: 400px;
+                width: 100%;
+                margin: auto;
+            }
+            .installments {
+                padding: 0 15px;
+            }
+            .installment-row {
+                grid-template-columns: 1fr 1fr;
+                padding: 5px;
+            }
+            .phone-mini {
+                grid-column: span 2;
+                justify-content: center;
+                padding: 3px;
+            }
+            .row-period {
+                border-radius: 5px;
+            }
+            .phones {
+                grid-template-columns: 1fr;
+                padding: 5px 15px;
+            }
+            .slider {
+                height: 230px;
+            }
+            .phone-display {
+                font-size: 14px;
+                min-height: auto;
+            }
+            .featured-section {
+                padding: 5px 15px 10px;
+            }
+            .features {
+                grid-template-columns: 2fr 2fr;
+                margin: 5px 15px;
+            }
+            .feature {
+                border-bottom: 1px solid #777;
+            }
+            .section-title {
+                margin: 8px 15px;
+            }
+            .cta {
+                margin: 5px 15px 15px;
+            }
+            .stock-strip {
+                margin: 5px 15px;
+            }
+        }
+        /* =========================
+           ACCESSIBILITY
+        ========================= */
+        
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="poster">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="flag">
+                <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="500" height="300" fill="#006400"/>
+                    <path d="M0 50H500V100H0Z" fill="#FFD200"/>
+                    <path d="M0 100H500V150H0Z" fill="#D40000"/>
+                    <path d="M0 150H500V200H0Z" fill="#000"/>
+                    <path d="M0 200H500V250H0Z" fill="#D40000"/>
+                    <path d="M0 250H500V300H0Z" fill="#FFD200"/>
+                    <polygon points="0,0 0,300 210,150" fill="white"/>
+                    <polygon points="0,45 32,150 0,255" fill="#D40000"/>
+                    <polygon points="32,80 50,135 108,135 61,168 78,225 32,190 -14,225 3,168 -44,135 14,135" fill="#D40000"/>
+                    <circle cx="32" cy="150" r="18" fill="#FFD200"/>
+                    <path d="M32 105 L43 145 L70 150 L45 160 L38 195 L25 165 L5 150 L25 140Z" fill="#8B5A00"/>
+                </svg>
+            </div>
+
+            <div class="header-title">
+                <div class="green">ZIMBABWE PRIDE,</div>
+                <div class="red">YOUR NETWORK!</div>
+            </div>
+        </header>
+
+        <div class="stripes"></div>
+
+        <!-- OFFER -->
+        <section class="offer">
+            <div class="offer-small">WE OFFER</div>
+            <div class="main-title">IPHONES, REDMI &</div>
+            <div class="main-title">SAMSUNG</div>
+            <div class="loan-title">PHONES ON CREDIT</div>
+            <div class="slogan">DEPOSIT TODAY, PAY EASY!</div>
+        </section>
+
+        <!-- LOAN CARDS -->
+        <section class="loan-options">
+
+            <div class="loan-card">
+                <div class="card-heading green-heading">IPHONE</div>
+                <div class="deposit-label">MINIMUM DEPOSIT</div>
+                <div class="deposit green-text">$100 <span class="percent">25%</span></div>
+                <div class="divider"></div>
+                <div class="installment-label">INSTALLMENTS</div>
+                <div class="monthly green-text">$40</div>
+                <div class="period green-period">FOR 12 MONTHS</div>
+            </div>
+
+            <div class="loan-card red">
+                <div class="card-heading red-heading">SAMSUNG</div>
+                <div class="deposit-label">MINIMUM DEPOSIT</div>
+                <div class="deposit red-text">$60</div>
+                <div class="divider"></div>
+                <div class="installment-label">INSTALLMENTS</div>
+                <div class="monthly red-text">$30</div>
+                <div class="period red-period">FOR 12 MONTHS</div>
+            </div>
+
+            <div class="loan-card blue">
+                <div class="card-heading blue-heading">REDMI</div>
+                <div class="deposit-label">MINIMUM DEPOSIT</div>
+                <div class="deposit blue-text">$40</div>
+                <div class="divider"></div>
+                <div class="installment-label">INSTALLMENTS</div>
+                <div class="monthly blue-text">$20</div>
+                <div class="period blue-period">FOR 12 MONTHS</div>
+            </div>
+
+            <div class="loan-card orange">
+                <div class="card-heading orange-heading">IPHONE PRO</div>
+                <div class="deposit-label">MINIMUM DEPOSIT</div>
+                <div class="deposit orange-text">$200</div>
+                <div class="divider"></div>
+                <div class="installment-label">INSTALLMENTS</div>
+                <div class="monthly orange-text">$60</div>
+                <div class="period orange-period">FOR 12 MONTHS</div>
+            </div>
+
+            <div class="loan-card">
+                <div class="card-heading green-heading">SAMSUNG ULTRA</div>
+                <div class="deposit-label">MINIMUM DEPOSIT</div>
+                <div class="deposit green-text">$150</div>
+                <div class="divider"></div>
+                <div class="installment-label">INSTALLMENTS</div>
+                <div class="monthly green-text">$50</div>
+                <div class="period green-period">FOR 12 MONTHS</div>
+            </div>
+
+        </section>
+
+        <!-- ALL PHONE MODELS IN STOCK — each card gets a stock tag, 12-months tag and a price tag -->
+        <div class="section-title">IPHONES ,REDMI & SAMSUNG MODELS</div>
+
+        <section class="phones phone-models" id="phoneGrid">
+            <!-- Phone cards are generated by the script below from the `phones` array.
+                 To add every phone in stock, just add a line to that array —
+                 slider, tags and price tag are all created automatically. -->
+        </section>
+
+        <!-- STOCK & CONTACT NUMBERS -->
+        <div class="stock-strip" id="stockStrip">
+            <h3>ALL PHONES AVAILABLE IN STOCK — CALL / WHATSAPP US NOW!</h3>
+            <p>
+                📞 <a href="tel:+263771234567">+263 77 123 4567</a> &nbsp;|&nbsp; 📞 <a href="tel:+263782345678">+263 78 234 5678</a> &nbsp;|&nbsp; 📞 <a href="tel:+263719456789">+263 71 945 6789</a><br> 💬 WhatsApp: <a href="https://wa.me/263771234567"
+                    target="_blank">+263 77 123 4567</a>
+            </p>
+        </div>
+
+        <!-- FEATURED IMAGE -->
+        <div class="section-title">FEATURED</div>
+
+        <section class="featured-section">
+            <div class="featured-frame">
+                <a href="https://curiousmatrix.com/wp-content/uploads/2025/02/Smartphones-1024x585.jpg" target="_blank">
+                    <img src="https://curiousmatrix.com/wp-content/uploads/2025/02/Smartphones-1024x585.jpg" alt="Featured Image">
+                </a>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">🤝</div>
+                <h3>EASY TERMS</h3>
+                <p>Flexible repayment options</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⏱</div>
+                <h3>QUICK APPROVAL</h3>
+                <p>Get approved in no time</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>GENUINE PHONES</h3>
+                <p>Sealed, brand new and warrantied</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <h3>CALL TODAY</h3>
+                <p>Pay easy, use it today</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="cta-main">
+                YOUR DREAM PHONE
+                <span>IS JUST A LOAN AWAY!</span>
+                <span class="approved">APPROVED<br>APPLY NOW</span>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- APPLY BUTTON -->
+    <button class="apply-btn" onclick="applyNow()">APPLY NOW</button>
+
+    <script>
+        function applyNow() {
+            // Change this URL to your application page
+            window.location.href = "apply.html";
+        }
+
+        // ==================================================
+        // EVERY PHONE AVAILABLE IN STOCK
+        // Add one line per model — card, slider images,
+        // stock tag, 12-months tag and price tag are all
+        // generated automatically.
+        //
+        // images: use your own image URLs (4 per phone).
+        // theme:  "green" | "red" | "blue" | "orange"
+        // ==================================================
+        var phones = [{
+                name: "IPHONE 17 PRO MAX",
+                theme: "green",
+                deposit: "$100",
+                monthly: "$40",
+                total: "$580 total",
+                desc: "6.9-inch Super Retina XDR OLED, ProMotion up to 120Hz, Always-On and HDR.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDauwy8fq3JRLdFMu5P3iaoczsyOiK-uAKhM3QWN2Ng&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMepLL17t_SunVvMyVklwXbS4sGfvayH9kzN9THQ3p2Q&s=10",
+                    "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT9lXEeKth265BWoQheXf5miYpe1R1z8G-n8Bo8xXDGo2VEitvzfRMgWSFLttj8kbqv4BuUxan8R3XvR_LiZQzdXRZm9g4R2U22Iw6KsFgyiw4S3lY62PzWcwg9FYryPpLblGTeeQ&usqp=CAc",
+                    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRH-zWBTZpA4YMDegtA8juLs6qIHzWjYYg1XHIgFZZZELXa3s5XK6xie_Jr03xcdz08JBkjRl3ergy-CD92Y3eZM2PhBhv7Bsq4CjLzHNTQONjWAiPz7cXCMJU3Yf0nSbZQX8Q8lPs&usqp=CAc"
+                ]
+            }, {
+                name: "IPHONE 17 PRO",
+                theme: "orange",
+                deposit: "$200",
+                monthly: "$60",
+                total: "$920 total",
+                desc: "6.3-inch ProMotion display, A19 Pro chip, 48MP Pro camera system.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTrb9P8CpdP6QKh82hBMUTtUdeFujV6d_e6Uu9XuYnyCuUIRMeG1iOVTUoaE6bsi48Q_ZnW777M5LeKOEKL5qmj9DTxXomi9SJYM5v1Hzz4MAsEXLem4pRTZ3nGkWp-jefkOAZ58JZ-w&usqp=CAc",
+                    "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQGyKk-4d01NxQGphhy5Dj-eFUuwMxv8fKIKsXv0dBxznEKD-3wBy5K3Cue5LbwcntUb6aXBg9YDhtsRBWNAYLU0Gevi-2vVnbVN1xTU4T-zeDJmeECq8TUQg&usqp=CAc",
+                    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTTuiHUY-CtHydFfJm5nOKuPbaadAlhpcVwznRvNOAPX9NJJZ9vQHZJgo1Qv9j9-Rf6f8R2p7gP56hU5Tx4ilczgbJHh-ytN2Iw4l0FDoNHS4m59PiN5vdCNCDNQGtDsA&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2zIaMHPPkvr56I7ufbG6W_-FkNQ87BdDWRPuhc3C5Bw&s=10"
+                ]
+            }, {
+                name: "IPHONE 17",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu987DbnBzhBCu4zGLb3ngBsZ_-GuxIFk9Ou4iqaKUYg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQnaBD19LOMXaYHJrNFu0AFWQnmwcV4P4HNy7YJZh-eA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQjLKCdxQcQOdo8jpbvlWEd8_sWmDVzoHmmRUVKukLqg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbWYkgCYOUjUswCS1YX2V94Dw8GGowSVcq3ui2-CKltg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-baLOMJ82jx90tDwJSWSFBTxAfqRCC7THZiIlqbFGGg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcmdHnCK5eT2fMtBwjvtQWxJW-PbWZAlsot3TpedUCaA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0tvUFuUb4c3g4YtLM35ePt6wpKCMIBQJEeB0NJwhnbQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqicxUP17hjXeTjCpmak3QHIjOpHDMlm-ThXZ1AGHwVg&s=10"
+
+                ]
+            }, {
+                name: "IPHONE AIR",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo_lBRJfgQYMhWnJMnt0qgZjDe-qgK4Tr7QifmYFtbvg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2NfcpMc6kMVFMxfEJduoAnWbDIbxq0NkdgxmfzaZNXw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHzHdMwT-ExhXg__Fk2-WrtfPNDNbEtcdexEOUvWySdg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbdgaYF4Lx7cMnTN1HP5zUU-JOuL70_GADmIujl214Pw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNnwoH5hp8MAyT6CmLibNJph3UJLrDnxoJrLccDYBXXg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIfzM4-KIiR0QhNJGGHyuBNuz1u9ZpJolpE33GtbnoCw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwaiodh_OHeaqPW-HBQ_jzknW4YTuQwMsktLW7NLwfiQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStoOoj9L4gvFEHdbnL86VmB81vA_hI_ioB2rpEZQJuXg&s"
+                ]
+            }, {
+                name: "IPHONE 17E",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ4tCfpN3gXgehokQ__qNwtQ1JDaUTxZqd2NEft0Akq704x6s0v6UA-cdTfbUhA2gHzzhm97IzRgP3VckP3Z2r4O-kTxi6IYnkTF_TTkInU&usqp=CAc",
+                    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRo5uguNTHlkYC5S5Rv-1BFsJb6YGoQYNJ-8fruAzwEgQ37ah1pbBqTaFQjzqiA4eDeWkomTXlk0sb6AdO08qXRlGuJ4wrAPyO7ByC49OIjA5QohKWUq2epwzdyHVWPDENaz0i-Aw&usqp=CAc",
+                    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ-y7OW2No3m8DPAtEhsO4H9ciW3utGljI8l84qERcq5QVb2vIYgxmOS9qEqb4finfvva5HNgbx0JeF_26uxguBbwx8Sc1lJiKm8fcBh74SO8gUSPU7O2yJtWSc3aIGX9ZfHm1ndQ&usqp=CAc",
+                    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTtnl84NEBiUHsVwvs5Gc5xq1KlI7expsfaaqNpvfiRQVQHMe8fHBWyDrq_FmYgvh5DXgivh1Wf2Ax_qxV7UMvvj6aQ4R05o1iCGCIgDscbbZvpeS7FB_nZ-2xMI9Qm3rpJV2tf7tRHMyI&usqp=CAc",
+                    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRTzD7PzRNtjcu1XgDBA7xCVSanKKe1aTlvOOukwt3Uyf5Kwyu1-lfBv8d-pWelhZ7UkijrVtUQsx2FknJwBd1ldWYCG5RntuPbB-ahK9crB-SfiZ0vuirQcTK-876yL7ZXmEQjTbo&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYNOMVr_0IvcKglV7JNdFGkYFvR4ZcFUmp-f8M9Jlrdg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTaDZltX8RGE2z0jVOCUbUNY-c7E6K2MElXCeEV4cYUw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvHc7ywMk0sQodLwqNmxEgCB_j_PB5ZMDEp3jGoY-RuA&s=10"
+                ]
+            }, {
+                name: "IPHONE 16 PRO MAX",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQtPwwNQYylNSCG9FEO2rLcAynJlsT0valj-aYPf1xII37Qs9jXY7lVa8IQYdJzwxNsBEwBegVktA_WI9z1daNCLF24X3dIzHXmDjZk6e7ulVMjYh7pYDQbyndPVsIdIXF4ClKQjewwDg&usqp=CAc",
+                    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSBQ9Keaor_3fiz_MCsk10ptOluLf40PQ21lYBLZ2iclxrQIdJiLzEHoEVXWT6dKQAlTbiErYAtV8wcMr-RH-QwaxRokZcfEaCAcodzn5VMPsKaYoWl141lQurT-w&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCzwDujitkogL8HAnQObH9KwKvybg1hRmc6K2CX3W8DA&s=10",
+                    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSHcnXUCVq3FnSXOLozbRY6Aejaj2tZoon4N64oxCY6w9p1dDUdL7RN2lJN_ZY9KDaaPwjpJhN8ydervJUIWEmFVXW2p9lYAna-OCORzBHQ_CsWoDGwFw7pr64rZZOqOcFsGaTrKg&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRKVkDyZScj7z-0q8eDey8e37ZGw5HrI3v2YlVH0Cu5SLl05iDzZ6X5HfwmSwQEiWut1ZTnvpiPuRUgbCFFQRvmrWuDeXC37dbx3o2S7djSyIykLrdK-kfCGe1CwadvrFpfQo0eHQ&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN34uzeitxVtkIhWxZZ5Gb5hiiCKFJ-khUx0AtK9FHqA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs0K0Nq6nqgPBqybR_VQEp0RKt9VWtsgfWz6C8dh6ZXw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLa93w645xRYXz66EQrwkQ8OwChEz9cl14LlCCcxlnww&s=10"
+
+                ]
+            }, {
+                name: "IPHONE 16 PRO",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs0K0Nq6nqgPBqybR_VQEp0RKt9VWtsgfWz6C8dh6ZXw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFXylDnU-19-1NcBMtzrHwbGNpQ1et0Zr2COd_Z56EwA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJm2BrjZdsBdD2jxxI-3sV0dEPdC8LEFI1-1aajSptw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDB4a2OYx88nn819imjUK38hNLn17Zta_lm29xazv1qw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4PqfLyYwwcgQ9Hcgj1YPDQJy1_y1KdaKOez5_Lf-KTg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqt80MiPrAt9LUBv0fKTbC4DUgJt0ZahmO_iCoqyFjNg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-lfMZPhkxY5h4nAqRGeHqqNVJK3D7PNWe04vfvXRAAA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-NGb_JXn6lc7-zEbxJdVhTZBHiV1W7I3PfyBpfLTTUg&s=10"
+
+                ]
+            }, {
+                name: "IPHONE 16 PLUS",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtXqOEME_OKVywuQdxQ5emeSw_G2S11Nmx-G4JdGXP1g&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpIF3EGI1OYgD0daerjbdtb1wBOmwoSOVCZ_5H4i2JNg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQesvB0ifVBpB8aSPzdRYmgOFohM9Yp2dcuhSDehch2VA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCrM3rqFeqAPSW6Zgx-B1MMiQ1eIx6_aymmyThXv990w&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP9O4CYDeQ15szQChPauExdN1b-5FXM25OVCJOA8LuRg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPvccH83fgU6zQYQYRS0-H--srTUmZxepfbm0g0Sd4Tg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmzTbt3Rek39A4KySBg_j_gV-WKo4p6Gw_Xri6HdUhYw&s=10"
+
+                ]
+            }, {
+                name: "IPHONE 16",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkKjRYt-e7pAU2YtA_03nf7IxskHyDPq9h-WTHEk8Lbw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKARYu1_Ne9mCr4J5tslYefiY3F64-_e8rxCIo_ascqw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Qb6l7oZbeSavgc3wzAkcWGvspdoVD_daFKYs9TOXfA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmc0xcfdpfOIKNp3Dm2XHgixD_Wa88DDbPP9Zu7CUcKQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYr2EhPpdJaTA1KJmPsGLu3XnSnluslSoZqc4gPM00tw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7-dIt3kxmIZVO-lY0Ig7nVR-6InRABXbcHfyGQx-xRQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTSira75Xv64m6WWyXmS1RYPaN7pc6RCZzColo_qyE-w&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsJnb6rymuzedgNwVOBreuolOlpEJ3MNUzqr_9TjSq_Q&s=10"
+
+                ]
+            }, {
+                name: "IPHONE 15",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCg6PAFlMLTsCgr5-dnlmHA_Y1xivzF15qHDritdCurg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqwh_mqvyxFCbxZ8Zgz8eRZEhuHggLfxEbxiiSxYsRlQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZDEkd5QqEAIVMcE46UqowckLVwAe3W5vZVfhGmOhtxg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ95Yn094zPjGcgVQRUZMrreeYLc3H3uZB3iL0BLT4Kg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJJB32VkdG3AZQemM1P5KaygLIbxPoV1RwpIGHwgyBAQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoKpsT5FnOcWJkPGm8Wp4mvr79SM-cspD1vzJ0jw-2MQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOhv9tbil2zXT5pGqsqpU_TPAOZDTcIP67Wi0JJ_vTMg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7wYPSeVTQ6gOnAs4H9W0AdyHEk79S8IE0wPOut8pdww&s=10"
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY S25 ULTRA",
+                theme: "green",
+                deposit: "$150",
+                monthly: "$50",
+                total: "$750 total",
+                desc: "6.9-inch QHD+ AMOLED 120Hz, Snapdragon 8 Elite, 200MP camera, S Pen.",
+                images: [
+                    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRoHXQSEtbobeNe_JTiDmkXyBJgpkx5jmmX7yYiaC2YAVTQfYvjn6sGulP0Wz4zhA1PvHLl-2BA5wG1KObQOb4jwZOitDGRo5ErkTgaqYfGa6lFsUxyiwJmTcbvzF8_dWzR5b8ESQ&usqp=CAc",
+                    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSvWh2bm6wdw5ubSIFnukk4ZDbjwTSCSn3bfQjTzG6cO7KI-3OdDmpf31LNMg7p4bNLXpARd8YrJJRdvqmdEdA5hyfNa-omQ2Ro8nO-HH1vsxjN3K9JQbqjHDS3TLL-Tj_EHFBWUg&usqp=CAc",
+                    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRvYaYgNWbBwCd6a-coU0iiSO8KMi8B3d0BMh2FWZfZHJNr0AXSOs5zN5MXdac4FfwjbUALx6Ua_i07M3dP2979-sdszVAbT7r6fTLZi6W_oJX34kscBRn0A_zA6ZnTbewvcby07CU&usqp=CAc",
+                    "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTj2sY042eaB0xT4ZSQBANBt55F7UHTtPz0VUAFCKzi-J1jPGLX48XrKhgDVbMaAXpqTVMuyapVMuGs--SN8H8gbLgUbScxgYkCPXdmHLs7GYUvD1WXgBLQaeR03NCoNIxMH8BUprA&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzcoq82I85zCS28gd7fb__5P3Xe_a1uawZVnXkvFVnug&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8NGVkM_z-9yd_B1d4A74yP_GBRAG3eYTUDD7dHfvFA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUyP6WQHDrX5kyGVD6RKd_1RXXva3wq5pNtwxbp6HSuA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn4RY3WOrKMJu_QhRWD-_bhog6SX2z12850xLsl3oijA&s"
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY S25+",
+                theme: "red",
+                deposit: "$60",
+                monthly: "$30",
+                total: "$420 total",
+                desc: "6.7-inch Super AMOLED 90Hz, 50MP triple camera, 5000mAh battery.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ50pHSjmT0VMb_fYUxaHn9kFT9x5KRiSTU1__SKNmhUg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJvJKVQp3i6gyqLoOKowZpmqPrpQDEsmYBIIO4HkPv3g&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwkWPjoc1ghR-Yx6xtL7XMTNWl0UfYgW5jnQnV_mjxxg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdoJ0MfP8_KcK7eJInT69pnw7gTFkKISS_kNW3lnQDYQ&s=10"
+
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY S25",
+                theme: "red",
+                deposit: "$60",
+                monthly: "$30",
+                total: "$420 total",
+                desc: "6.7-inch Super AMOLED 90Hz, 50MP triple camera, 5000mAh battery.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ2aW6MN-byPU012uHB03xBWXqio2G8H6ftddK5-G8sw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1TpxufPiHZpF1JTd65oTpwITRlCD4Gg4RpjAp6xlxRA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ5fuPhJfug1B25qFlki_RQrSgcVqtIibVNdCYCV014Q&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOcEzlTRDoSmBuqp1KEDoVDBRQaWJ5BQLNj0tbWrAY1Q&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx2OtloQcA81_GqQQbOSrigfa8v_Se1CIexYmnqhfHmQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT2COVYC10o_GYOEa6Mpor-L18fncV_690g_1Jix9sMCQTdGgFEwPNCAg&s=10"
+
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY S25 EDGE",
+                theme: "red",
+                deposit: "$60",
+                monthly: "$30",
+                total: "$420 total",
+                desc: "6.7-inch Super AMOLED 90Hz, 50MP triple camera, 5000mAh battery.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0DIi4RgFz3tkdIsTtgckOQJ6oFx0o42JuR11MZT7S_w&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS19fC_vgcfw80FvwC0_oZPz077zVvS2NjX_VNA5-MaIg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfq4tEjkjoFpW9uxXF44V3sM3ehzUHG4FI2FhxrgkyAQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSmxo25pkYb51SCEZF1x_UzzcX9Rz6rFv-p_gXQmTJ2A&s",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa0so4rhwtAxfEXkFJkW7jljK8z5OmIT-NtfZ6_KnQeA&s=10"
+
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY S24 ULTRA",
+                theme: "red",
+                deposit: "$60",
+                monthly: "$30",
+                total: "$420 total",
+                desc: "6.7-inch Super AMOLED 90Hz, 50MP triple camera, 5000mAh battery.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOpbLpR-QiICQn2RE64ezNBlnAHpIhqQS_xcAdKDwVYQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVkQgQ2cWesQMPmdAsE5cGqfNPVdWPCbX28gCOTaINCQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmq9LxTwVHAepu6Mt12ixWIDw-7AuPLMWvMEDpaQ8vXA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST014mioKQYKVAwkRq3e0lfnlpKcMmygYbvhgfqdeu3Q&s=10"
+
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY S24+",
+                theme: "red",
+                deposit: "$60",
+                monthly: "$30",
+                total: "$420 total",
+                desc: "6.7-inch Super AMOLED 90Hz, 50MP triple camera, 5000mAh battery.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_5qwb6ydkC1vQvlQbRfqh4aCvFultnLs2J6GBg7EjJg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq6GJi_VWnMGRpYTvzhL8rix1xr1dvzpkj9_NewTrQcw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8CK26mEFSA8E91Ddb786h2oahH2otnmKKULz-JsF0pg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8OVM-xfN9U9FS_ONXLLq5x5ilvD1gDFV_4kZhDHnw6A&s=10"
+
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY S24",
+                theme: "red",
+                deposit: "$60",
+                monthly: "$30",
+                total: "$420 total",
+                desc: "6.7-inch Super AMOLED 90Hz, 50MP triple camera, 5000mAh battery.",
+                images: [
+                    "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQDxK10A892UQB24FAugpWxy2j8raifd_L28PntgbDJ_TCgLRnwymILwg70b00h6tqqu_Gm0_MjstY-2C9Cco3cndGwSEyqI-E_BY8Cy6eEVYZm5uM_fz0-IA&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO0FgXYm72jjyvPEZT6DvTxm23EyEwmAQJ2SRpHBbJ1A&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwFAnZMFutbFK5_SfPQ7Np-zEbOLH8hNMpUbWqBivdOA&s=10",
+                    "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSFik4znTMT7Za72TLwi8yr0QliG2Wjvp858UMk_TwKTlOBlXwSQiEnA60CuZVXFeAZ7WHhb2kd_7kcBqLmoAaUBJSgWKm0PJO1m9NyqeyJckbjkXxi_Fv0&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbC802AADyh8MIUUgZ4iFB2QOI4w9VWBZEj11aY1OfgA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHj7tNc2X_sk23tDT9XItzEzFs6GJ_YfY0blHk_PH6Q&s=10"
+
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY A56 5G",
+                theme: "red",
+                deposit: "$60",
+                monthly: "$30",
+                total: "$420 total",
+                desc: "6.7-inch Super AMOLED 90Hz, 50MP triple camera, 5000mAh battery.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKUkzGFxVVgU9YvvSsxWulu63c_hTiFHJ7S36rGrV4wg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUdxRUXz4Wr_3s6sPuF3iEt-pd458XVohfQEKroPb08A&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRetM3snVWyyKKoPpWX-w1rpAyAV43_V8_qLF_0Aid-WA&s"
+
+
+                ]
+            }, {
+                name: "REDMI NOTE A36 5G",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.67-inch AMOLED 120Hz, 200MP OIS camera, 5500mAh fast-charging battery.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHDvE2X-nuolrLAyGD8l8JdY3pxhJ6dYh4LyQZLUvaNw&s",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmRKcKpYidDN9sH-oqibIEbqdltKCXy96CFiXwJ6IUog&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGhvfbJDDHWdn6DuBZfRdVFpgI2VsrDVztUaIID2UaPQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrbj_5GrZsZlA_9cXx8rWPXHNzeaBZbF_rMgpUCNvyQA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnBCaV14MXhwupnAsMZdNUCkmURL4dBrY4v2AbWZbOEg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5K8nyrX8wpWCmALB9WfBiHCRw9ORlnm6qzqgZUYD_mg&s"
+
+
+                ]
+            }, {
+                name: "SAMSUNG GALAXY A26 5G",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmLoALTKFn0wAIPAT5oNVkgPGbGPrBgFPUc4GKrH63dQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbNXaQcoJd_nu1sxafMgFixD75E99IXn8yaYu5BTnAbQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc4RwkxHO90Fs89JOVtPZYkzH4jXzxO4QtlxxJWJ3XlA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb6WiOWgh2r6d4-aqJoPfakEmKojnzkKHfddInHt7n2A&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIpgbFCyBycpaAGQv1zJIdMee-ZYBKpN595gFdGl9ewQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdyu7broT0Oe_qpQvFZ3pWblxC0cEaJot7P2rgsgrY8Q&s=10"
+
+
+                ]
+            }, {
+                name: "REDMI NOTE 15 PRO+",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR9p4Rh8do-IizStWNJF0AOQqBRF56PmrdfuTR3tZbkwp3-TAtHgQB94EojbhSiaM6aEJWMHQ31sNwebh8QCpgijdnVl1_NChhh5lKpx2lnnH04_Au7MZu01PpVzoPw83bYcSG0wA&usqp=CAc",
+                    "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT22Ow7hkhvEN6QSjHLD3FneOczwn3XYb0HaGIxcSK7qP-3YSpEsZt57EdJT4XS9xKUiirOOnpzeTHkuRdcns4g660ZyUJ2VnOFVL81uwwRKNFghr6_FkOiCMZC3XOzaoZN6ooj2Q&usqp=CAc",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOtQjJ50Wlkp1jXmz0CbW7qw9nKfK1M01TbMa7vYYJpQ&s=10",
+                    "data:image/webp;base64,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"
+
+
+                ]
+            }, {
+                name: "REDMI NOTE 15 PRO 5G",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0fYgBJAhwsGZswAR9GfAwXlrjeSnFx1xtiBNXZ_9rNQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi8zJxpd13AvkMlnrCdFelS6eRdPsGNtxZao4sLVCUWA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKktFfSdbfeefkMvn2hi6EyJ-fHLcIeUuYXeWz02v_Qg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbR1WnSqhVAcE95ES_RnnaVrHdw3SxzmJ9yEhJajhp0Q&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUGw-7P65LragVwOoh743GNGirWLhoj0m0l_Yx_3ScMg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyc8cb4ZIZlgFgg7r33kyChMAJ-ua9HGPsnsTHn6zqlQ&s=10"
+
+
+                ]
+            }, {
+                name: "REDMI NOTE 15",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9cPIf-zm7AbNCBW6EKx8eKgvYjJyXr5y1l-BhwWJhLg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5F7jRl1WQU92596fWMplVnhOV1MNso3VeeXmUu2P4BA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTMp0uyEBuszpEaiNBG5YOfBAWGHRrdIWpi_MOlQoYIw&s=10",
+                    "data:image/webp;base64,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"
+
+                ]
+            }, {
+                name: "REDMI 15",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6UKoeRIM7zO1DrxUMQn-BRxBp-mmonR9G969jHotGyA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-SpyYhWt6PFJcqeK4g5jNe__kovT6j-pOdautV_O3Ww&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGiedPatoXTfGDIVoge18KCpIxgC3ZNkfY4RCCjUrkJg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNkdDMEklvowZtPPh42AG7L30wckFyA08crZNd41k93w&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyDg3udSiqKoNQ3VxH29n57Ystvcb4Dym5R9OizzbQMw&s=10"
+
+                ]
+            }, {
+                name: "REDMI 15C",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs77rvn-vCUTCVNjzqVFlVkseuhAVJfHvVeaWTvytHvQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7IkHhAVVfoHunXc3Yaa5_rqlSpl3KIxt95P8Hz8gobQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ_6M6Bf8bbMv0I4WbRZcrpwI1pBKvWB5zDkP-o206Qw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXhd9GgCzXf_dY0kd4WROXNvU6kmpGBPYJPbA41jZz0A&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBj9w59IrLbN5aw9JdATPDg2ryMoNUyaLa5W35SuzEUQ&s",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgdU0DuJhQGGDXexfEXVPEVC051coPCIp4DZWpM3l3Og&s=10"
+
+                ]
+            }, {
+                name: "REDMI NOTE 14 PRO+ 5G",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldDFJVtcJ--XJX-QSPDVrPlzrAuKYNIS5nKOe53Rl2Q&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5uD8ldGH88Jr0H0p_Mhq9IuRKRDLoRObWMGNi9NG2og&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfbxEqeI3e4csgFotjOcP4_RTxHqD7KcvXmFvHMZSQtA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5VljkgZIZEsk2fTkoQzD7WYHCAmWP3R_h3iqnWlpVIA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5xDDnYInVIueVEL4lrL4SjuLoWTiT-kT-Edl70sTgDA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5tB0oU2IcckHCqiiEGEz6wm18zB5jWOqsUIaefw_7kg&s=10"
+
+                ]
+            }, {
+                name: "REDMI NOTE 14 PRO 5G",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQLF56UWWQd78pfkIPDtfLg9JLoyn4HPkaHJHoM6jFzw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqS2YAJAqRcC6Aj9FqNqrbkKu_ZnpEOtbB_dYuc412Gg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzAkwNQOQAp95MbQ4RXcdi_uyB1WH0SkwucgvUHy61Ag&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMRutrj9V84eJM0wu1TheaiJv2Wwt_BkU0cD6Or4HVrw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmF4nmVWbo2HsrqDmMFarW3XjWnoqq_FMw2shQpGO_xw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjnxIPPzRHFR5OMRNgiI6aUX_-i0ZuVFv0TOWXAXBnjQ&s=10"
+
+                ]
+            }, {
+                name: "REDMI NOTE 14 PRO",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgTWjlKSy5umZnG2oeZR4MlIW2svcxkqQuzQIzaF8v8w&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzXVND_Bs-lb_fVCMR1IVjtBT4Rlhay6Onh5616X6R5Q&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOJ2RHa5gZdGKK8jhIeNJhelafqyEezUnwMDTWb8jjYg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR66JxtHA9OTjDhKXdez77THJF3d-XJGG2tjA6OQcundA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXimKfGt9tGsDjma-O85udcUx9IqZ1WP5skPMYzmGpfg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzsvNrV0DyIIMdldO_IYDs5TZVXDa7XM4LnKBbjfj-Uw&s=10"
+
+                ]
+            }, {
+                name: "REDMI NOTE 14 5G",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWtW5ttNaSg83dlx1wfnmQNPUEGuVVlz0Lf-AT_g9-7Q&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4u3p3SNCrtpaewHBIFk9rgz4Lk7rxcjEUMaLQROJsoQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ30Hbtg2RTE4duMr-SYwUcXnM1r9TrdeS55ZR2yTtacg&s",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTelDAQXqTidfTvS56fNa_47zctbAqbinERYwZ5m4RyXA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCS3pmgrBaZqvxiMkxF08ZRHGcdAPe-7UBj-CXbZDucQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfCuXUEGZImSWF2tnyNiN9NJ4ClA-1aKYMkMdOKlekPg&s=10"
+
+                ]
+            }, {
+                name: "REDMI NOTE 14",
+                theme: "blue",
+                deposit: "$40",
+                monthly: "$20",
+                total: "$280 total",
+                desc: "6.88-inch 120Hz display, 50MP camera, 5160mAh battery — budget king.",
+                images: [
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOGLa5hAc-KYAhXXXnHGVDAiFN8GhIOhEZgBE79V3dsQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3oP3UL4UIkzdZTm3dTyApEd1W0qsL3wkZN-Ed9J_rPw&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhuPDZ2JYhA9xGtLvUgW706AYmKO6upTa0c-DJyAKxJg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGdpuoW-jZv29tTSCOaT2V-y5IZ0XBH7aTfcaw_nyWoQ&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw7MFXt5e1LU539OUBKQbLf3MhVYvELCTm58eUYX5eOA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRso5YixXfxpU-w6l5BhcZfhRacPZpjoRyHeVzd3W5TsA&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKbg8C0ndSx94U3upzR48ezr8UCBDq7jvZo47r-XAoCg&s=10",
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuKreLmTyIsDJwLMq-Zl4Z8lZlFJU6ZccVjZZp6W_FhQ&s=10"
+
+                ]
+            }
+            // ➕ ADD EVERY OTHER PHONE IN STOCK HERE — copy the block above,
+            //    change name/deposit/monthly/images, and it appears automatically.
+        ];
+
+        // Build the phone cards
+        (function buildPhones() {
+            var grid = document.getElementById("phoneGrid");
+            var html = "";
+
+            phones.forEach(function(p) {
+                var imgs = p.images.map(function(src) {
+                    return '<img src="' + src + '" alt="' + p.name + '">';
+                }).join("");
+
+                html +=
+                    '<div class="phone-card ' + p.theme + '-phone">' +
+                    '<span class="stock-tag">✔ IN STOCK</span>' +
+                    '<span class="months-tag">12 MONTHS</span>' +
+                    '<div class="slider"><div class="slider-track">' + imgs + '</div></div>' +
+                    '<div class="brand-label ' + p.theme + '-brand">' + p.name + '</div>' +
+                    '<div class="phone-display">' + p.desc + '</div>' +
+                    '<div class="price-tag">' +
+                    '<div class="pt-row"><span>DEPOSIT</span><strong class="' + p.theme + '-strong">' + p.deposit + '</strong></div>' +
+                    '<div class="pt-row"><span>MONTHLY</span><strong class="' + p.theme + '-strong">' + p.monthly + ' /month</strong></div>' +
+                    '<div class="price-total">PAY EASY FOR 12 MONTHS • ' + p.total + '</div>' +
+                    '</div>' +
+                    '</div>';
+            });
+
+            grid.innerHTML = html;
+        })();
+
+        // ==================================================
+        // TOUCH SUPPORT — on phones/tablets, tapping a card
+        // starts the left slide (tap again to stop)
+        // ==================================================
+        document.querySelectorAll('.phone-card').forEach(function(card) {
+            card.addEventListener('touchstart', function() {
+                card.classList.toggle('touched');
+            }, {
+                passive: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>
